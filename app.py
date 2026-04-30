@@ -306,7 +306,7 @@ def get_passenger_profile(passenger_type: str) -> str:
 @tool
 def generate_voucher(partner_id: str, passenger_type: str, offer_template: str) -> str:
     """[MCP:PartnerNegotiation v2.0] Negotiate and generate a personalized discount voucher via partner API."""
-    code = f"KPIT-{'KID' if passenger_type == 'Child' else 'VIP'}-{partner_id[:4].upper()}-{uuid.uuid4().hex[:6].upper()}"
+    code = f"{'KID' if passenger_type == 'Child' else 'VIP'}-{partner_id[:4].upper()}-{uuid.uuid4().hex[:6].upper()}"
     return json.dumps({
         "voucher_code": code,
         "offer": offer_template,
@@ -352,7 +352,7 @@ class SDVState(TypedDict):
 
 def _llm():
     return ChatGoogleGenerativeAI(
-        model="gemini-2.5-flash",
+        model="gemini-3.1-flash-lite",
         google_api_key=st.secrets["GEMINI_API_KEY"],
         temperature=0.2,
     )
