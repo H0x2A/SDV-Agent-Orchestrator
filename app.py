@@ -4,7 +4,7 @@ import json
 
 # 1. Connect to the AI
 genai.configure(api_key=st.secrets["GEMINI_API_KEY"])
-model = genai.GenerativeModel('gemini-1.5-flash')
+model = genai.GenerativeModel('gemini-2.5-flash')
 
 # 2. Mock Data (Simulating MCP tool results)
 def get_charging_stations():
