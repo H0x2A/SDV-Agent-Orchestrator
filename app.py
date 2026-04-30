@@ -352,7 +352,7 @@ class SDVState(TypedDict):
 
 def _llm():
     return ChatGoogleGenerativeAI(
-        model="gemini-3.1-flash-lite",
+        model="gemini-3-flash",
         google_api_key=st.secrets["GEMINI_API_KEY"],
         temperature=0.2,
     )
