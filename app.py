@@ -22,7 +22,7 @@ st.set_page_config(
 )
 
 # ══════════════════════════════════════════════════════════════════════════════
-#  CSS  —  dark cockpit / HMI aesthetic
+#  CSS  
 # ══════════════════════════════════════════════════════════════════════════════
 st.markdown("""
 <style>
@@ -214,7 +214,7 @@ PARTNER_DB = {
         "partner_id": "TATA_PNQ_HIN_01",
         "charger_type": "DC Fast (150 kW)",
         "eta_minutes": 8,
-        "amenities": ["AirConsole Gaming Lounge", "McDonald's", "Starbucks", "Kids Play Zone"],
+        "amenities": ["McDonald's", "Starbucks", "Kids Zone"],
         "child_amenity": "AirConsole Gaming Lounge",
         "adult_amenity": "Starbucks",
         "child_offer_template": "45-min AirConsole Pro Session — Unlocked",
@@ -227,7 +227,7 @@ PARTNER_DB = {
         "partner_id": "ATHER_PNQ_WKD_02",
         "charger_type": "DC Fast (100 kW)",
         "eta_minutes": 6,
-        "amenities": ["Kids Zone", "Café Coffee Day", "Domino's", "Gaming Corner"],
+        "amenities": ["Kids Zone", "Café Coffee Day", "Domino's"],
         "child_amenity": "Kids Zone",
         "adult_amenity": "Café Coffee Day",
         "child_offer_template": "Kids Zone Pass — 30 min Complimentary",
@@ -306,7 +306,7 @@ def get_passenger_profile(passenger_type: str) -> str:
 @tool
 def generate_voucher(partner_id: str, passenger_type: str, offer_template: str) -> str:
     """[MCP:PartnerNegotiation v2.0] Negotiate and generate a personalized discount voucher via partner API."""
-    code = f"{'KID' if passenger_type == 'Child' else 'VIP'}-{partner_id[:4].upper()}-{uuid.uuid4().hex[:6].upper()}"
+    code = f"KPIT-{'KID' if passenger_type == 'Child' else 'VIP'}-{partner_id[:4].upper()}-{uuid.uuid4().hex[:6].upper()}"
     return json.dumps({
         "voucher_code": code,
         "offer": offer_template,
