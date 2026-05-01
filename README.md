@@ -249,8 +249,8 @@ A farther station may be selected when:
 ### 1. Clone the repository
 
 ```bash
-git clone <your-repository-url>
-cd <your-repository-name>
+git clone https://github.com/H0x2A/SDV-Agent-Orchestrator.git
+cd SDV-Agent-Orchestrator
 ```
 
 ### 2. Create a virtual environment
