@@ -81,7 +81,7 @@ def parse_json(raw: str) -> dict:
 
 def llm():
     return ChatGoogleGenerativeAI(
-        model="gemini-1.5-flash",
+        model="gemini-3.1-flash-lite-preview",
         google_api_key=st.secrets["GEMINI_API_KEY"],
         temperature=0.2,
     )
