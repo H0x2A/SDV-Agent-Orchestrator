@@ -503,6 +503,8 @@ It must feel like a premium car HMI — calm, helpful, specific.
 Return ONLY the message text, nothing else.
 """)])
 
+    print(f"DEBUG: Response type is {type(response.content)} and value is {response.content}")
+    
     msg = response.content.strip().strip('"')
     push_hmi_alert.invoke({"message": msg, "urgency": urgency_data.get("urgency_level", "MEDIUM")})
 
