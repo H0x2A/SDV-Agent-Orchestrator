@@ -1,6 +1,6 @@
 # SDV Orchestrator Demo
 
-A proof-of-concept demo for **Software Defined Vehicle (SDV) service orchestration** using:
+A demo for **Software Defined Vehicle (SDV) service orchestration** using:
 
 - **LangGraph** for agent orchestration
 - **4-agent decision flow**
